@@ -14,10 +14,9 @@ class MapFragment : Fragment() {
 
     private lateinit var mapView: MapView
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        MapKitFactory.setApiKey("aa08877f-d508-425c-9274-ed039a4ed158")
-        MapKitFactory.initialize(requireContext())
     }
 
     override fun onCreateView(

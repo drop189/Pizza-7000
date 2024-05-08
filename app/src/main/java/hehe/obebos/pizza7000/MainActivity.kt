@@ -10,13 +10,25 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.yandex.mapkit.MapKitFactory
+import com.yandex.mapkit.mapview.MapView
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var drawerLayout: DrawerLayout
 
+
+//    lateinit var mapView: MapView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+//        MapKitFactory.setApiKey("aa08877f-d508-425c-9274-ed039a4ed158")
+//        MapKitFactory.initialize(this)
+//        mapView = findViewById(R.id.mapView)
+
         setContentView(R.layout.activity_main)
+
+
 
         drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
 
@@ -48,6 +60,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .replace(R.id.fragment_container, ShareFragment()).commit()
             R.id.nav_about -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, AboutFragment()).commit()
+            R.id.map_view -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, MapFragment()).commit()
+
             R.id.nav_logout -> Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()
         }
         drawerLayout.closeDrawer(GravityCompat.START)
@@ -63,4 +78,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             onBackPressedDispatcher.onBackPressed()
         }
     }
+
+
 }

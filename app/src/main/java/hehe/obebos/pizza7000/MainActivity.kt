@@ -11,6 +11,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.yandex.mapkit.MapKitFactory
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var drawerLayout: DrawerLayout
@@ -71,8 +72,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_about -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, AboutFragment()).commit()
             R.id.nav_logout -> {
-                Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()  // Выход (Крутой)
                 finishAndRemoveTask()
+                exitProcess(0)
             }
         }
         drawerLayout.closeDrawer(GravityCompat.START) // Закрывает NavigationDrawer после выполнения функции (Прослушки нажатий)

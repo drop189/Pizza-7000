@@ -14,24 +14,19 @@ class MapFragment : Fragment() {
 
     private lateinit var mapView: MapView
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        val view = inflater.inflate(R.layout.fragment_map, container, false)
+        val view = inflater.inflate(R.layout.fragment_map, container, false) // Отсылает к XML и создает переменную
         mapView = view.findViewById(R.id.map_view)
 
-        val cameraPosition = CameraPosition(Point(60.012897, 30.396727), 15.0f, 0.0f, 0.0f)
+        val cameraPosition = CameraPosition(Point(60.012897, 30.396727), 15.0f, 0.0f, 0.0f) // Начальная позиция камеры
         @Suppress("DEPRECATION")
         mapView.map.move(cameraPosition)
 
-        return view
+        return view // Отсылает переменную к XML
     }
 
     override fun onStart() {

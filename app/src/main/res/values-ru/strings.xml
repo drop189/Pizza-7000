@@ -10,4 +10,8 @@
     <string name="share">Поделиться</string>
     <string name="about_us">О нас</string>
     <string name="logout">Выйти</string>
+    <string name="home_fragment">Домашний фрагмент</string>
+    <string name="about_us_fragment">Типа поддержка</string>
+    <string name="share_fragment">"Поделиться "</string>
+    <string name="settings_fragment">Настройки</string>
 </resources>

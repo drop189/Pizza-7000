@@ -14,5 +14,6 @@
     <string name="about_us_fragment">About Us Fragment</string>
     <string name="share_fragment">Share Fragment</string>
     <string name="settings_fragment">Settings Fragment</string>
+    <string name="pizza">Pizza!!!</string>
 
 </resources>

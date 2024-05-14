@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Пицца7000</string>
+    <string name="open_nav">Откройте навигационный ящик</string>
+    <string name="close_nav">Закройте навигационный ящик</string>
+    <string name="hello_blank_fragment">Привет, пустой фрагмент</string>
+    <string name="home">Домашняя страница</string>
+    <string name="map">Карта</string>
+    <string name="settings">Настройки</string>
+    <string name="share">Поделиться</string>
+    <string name="about_us">О нас</string>
+    <string name="logout">Выйти</string>
+    <string name="home_fragment">Домашний фрагмент</string>
+    <string name="about_us_fragment">Типа поддержка</string>
+    <string name="share_fragment">"Поделиться "</string>
+    <string name="settings_fragment">Настройки</string>
+    <string name="pizza">Пицца!!!</string>
+</resources>

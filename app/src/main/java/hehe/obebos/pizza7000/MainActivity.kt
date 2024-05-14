@@ -1,8 +1,10 @@
 package hehe.obebos.pizza7000
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +20,11 @@ import kotlin.system.exitProcess
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var bottomNavigationView: BottomNavigationView
+
+    fun onClickGoMain2(view: View) {
+        val intent = Intent(this, MainActivity2::class.java)
+        startActivity(intent)
+    }
 
     companion object {
         const val MAPKIT_API_KEY = "aa08877f-d508-425c-9274-ed039a4ed158" // API-ключ

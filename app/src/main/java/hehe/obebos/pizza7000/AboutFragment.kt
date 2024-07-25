@@ -24,7 +24,7 @@ class AboutFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val button: Button = requireView().findViewById(R.id.button)
+        val button: Button = requireView().findViewById(R.id.button) // requireView() для фрагментов
         button.setOnClickListener {
             // Создаем объект Intent для вызова активити MainActivity2
             val intent = Intent(activity, MainActivity2::class.java)

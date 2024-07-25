@@ -15,11 +15,13 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.yandex.mapkit.MapKitFactory
+import hehe.obebos.pizza7000.databinding.ActivityMainBinding
 import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var bottomNavigationView: BottomNavigationView
+    private lateinit var binding: ActivityMainBinding
 
     fun onClickGoMain2(view: View) {
         val intent = Intent(this, MainActivity2::class.java)
@@ -27,7 +29,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     companion object {
-        const val MAPKIT_API_KEY = "aa08877f-d508-425c-9274-ed039a4ed158" // API-ключ
+        const val MAPKIT_API_KEY = BuildConfig.YMP_API_KEY // API-ключ
     }
 
     override fun onSaveInstanceState(outState: Bundle) { // Проверка на API-ключ перед инициализацией MapKitFactory
@@ -49,9 +51,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setApiKey(savedInstanceState)               // Задаем API-ключ
         MapKitFactory.initialize(this)      // Инициализируем MapKitFactory
 
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
 
-        drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
+        setContentView(binding.root)
+
+        drawerLayout = binding.drawerLayout
         bottomNavigationView = findViewById(R.id.bottom_navigation)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)  // Активация toolbar
@@ -131,7 +135,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .replace(R.id.fragment_container, AboutFragment()).commit()
 
             R.id.nav_logout -> {
-                Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()  // Выход (Крутой)
+                Toast.makeText(this, R.string.logout, Toast.LENGTH_SHORT).show()  // Выход (Крутой)
                 finishAndRemoveTask()
                 exitProcess(0)
             }
